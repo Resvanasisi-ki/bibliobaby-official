@@ -11,7 +11,7 @@
             box-sizing: border-box;
         }
         body {
-            font-family: 'Segoe UI', 'Arial Rounded MT Bold', 'Helvetica Rounded', sans-serif;
+            font-family: 'Segoe UI', 'Arial Rounded MT Bold', sans-serif;
             background: linear-gradient(135deg, #FFE5B4 0%, #FFB6C1 25%, #98FB98 50%, #87CEEB 75%, #DDA0DD 100%);
             background-size: 400% 400%;
             animation: gradientShift 20s ease infinite;
@@ -26,121 +26,24 @@
             100% { background-position: 0% 50%; }
         }
 
-        /* Floating 3D Shapes Background */
-        .floating-shapes {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            pointer-events: none;
-            z-index: 0;
-            overflow: hidden;
-        }
-        .shape {
-            position: absolute;
-            border-radius: 50%;
-            animation: float3D 8s ease-in-out infinite;
-            filter: blur(1px);
-        }
-        .shape-1 {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, #FFA07A, #FF6B9D);
-            top: 10%;
-            left: 5%;
-            animation-delay: 0s;
-            box-shadow: 0 10px 30px rgba(255, 107, 157, 0.4);
-        }
-        .shape-2 {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #98FB98, #87CEEB);
-            top: 20%;
-            right: 10%;
-            animation-delay: 1.5s;
-            box-shadow: 0 10px 30px rgba(152, 251, 152, 0.4);
-        }
-        .shape-3 {
-            width: 100px;
-            height: 100px;
-            background: linear-gradient(135deg, #87CEEB, #DDA0DD);
-            bottom: 30%;
-            left: 8%;
-            animation-delay: 3s;
-            box-shadow: 0 10px 30px rgba(135, 206, 235, 0.4);
-        }
-        .shape-4 {
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, #FFB6C1, #FFE5B4);
-            bottom: 20%;
-            right: 5%;
-            animation-delay: 4.5s;
-            box-shadow: 0 10px 30px rgba(255, 182, 193, 0.4);
-        }
-        .shape-5 {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, #DDA0DD, #FFA07A);
-            top: 50%;
-            left: 3%;
-            animation-delay: 6s;
-            box-shadow: 0 10px 30px rgba(221, 160, 221, 0.4);
-        }
-        @keyframes float3D {
-            0%, 100% {
-                transform: translateY(0) rotateX(0deg) rotateY(0deg) scale(1);
-                opacity: 0.7;
-            }
-            25% {
-                transform: translateY(-30px) rotateX(10deg) rotateY(10deg) scale(1.1);
-                opacity: 0.9;
-            }
-            50% {
-                transform: translateY(-50px) rotateX(-10deg) rotateY(-10deg) scale(1);
-                opacity: 0.7;
-            }
-            75% {
-                transform: translateY(-20px) rotateX(5deg) rotateY(-5deg) scale(1.05);
-                opacity: 0.8;
-            }
-        }
-
         .container {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
             position: relative;
             z-index: 1;
         }
+
+        /* Hero Section */
         .hero {
             text-align: center;
-            padding: 80px 50px;
-            background: rgba(255, 255, 255, 0.98);
+            padding: 60px 40px;
+            background: rgba(255, 255, 255, 0.95);
             border-radius: 40px;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
             box-shadow: 0 20px 60px rgba(0,0,0,0.15);
             border: 6px solid #FFA07A;
             position: relative;
             overflow: hidden;
-        }
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255, 160, 122, 0.1) 0%, transparent 70%);
-            animation: rotate 20s linear infinite;
-        }
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-        .hero-content {
-            position: relative;
-            z-index: 2;
         }
         .brand-badge {
             display: inline-block;
@@ -150,7 +53,7 @@
             border-radius: 50px;
             font-weight: bold;
             font-size: 1.1em;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             box-shadow: 0 8px 25px rgba(255, 107, 157, 0.4);
             animation: pulse 2s ease-in-out infinite;
         }
@@ -159,7 +62,7 @@
             50% { transform: scale(1.05); }
         }
         .hero h1 {
-            font-size: 4.5em;
+            font-size: 4em;
             margin: 0 0 20px 0;
             background: linear-gradient(135deg, #FFA07A 0%, #FF6B9D 25%, #98FB98 50%, #87CEEB 75%, #DDA0DD 100%);
             -webkit-background-clip: text;
@@ -167,41 +70,37 @@
             background-clip: text;
             font-weight: 900;
             letter-spacing: -2px;
-            text-shadow: none;
             filter: drop-shadow(4px 4px 8px rgba(0,0,0,0.15));
-            animation: shimmer 3s linear infinite;
-        }
-        @keyframes shimmer {
-            0% { filter: drop-shadow(4px 4px 8px rgba(0,0,0,0.15)) brightness(1); }
-            50% { filter: drop-shadow(4px 4px 8px rgba(0,0,0,0.15)) brightness(1.1); }
-            100% { filter: drop-shadow(4px 4px 8px rgba(0,0,0,0.15)) brightness(1); }
         }
         .hero .tagline {
-            font-size: 2em;
-            margin: 25px 0;
+            font-size: 1.8em;
+            margin: 20px 0;
             color: #FF6B9D;
             font-weight: 700;
-            letter-spacing: 1px;
         }
-        .mascot-3d {
-            width: 180px;
-            height: 180px;
-            margin: 40px auto;
+
+        /* Dancing Animals Container */
+        .dancing-animals {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            gap: 30px;
+            margin: 50px 0;
+            flex-wrap: wrap;
+            min-height: 200px;
+        }
+
+        /* Base Animal Styles */
+        .animal {
             position: relative;
-            animation: mascotBounce 2s ease-in-out infinite;
+            animation: dance 1.5s ease-in-out infinite;
         }
-        .mascot-body {
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, #FFA07A 0%, #FF8C69 50%, #FF6B9D 100%);
+        .animal-body {
+            position: relative;
             border-radius: 50%;
-            position: relative;
-            box-shadow:
-                0 20px 60px rgba(255, 107, 157, 0.5),
-                inset 0 -20px 40px rgba(0,0,0,0.1),
-                inset 0 20px 40px rgba(255,255,255,0.3);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
         }
-        .mascot-face {
+        .animal-face {
             position: absolute;
             top: 50%;
             left: 50%;
@@ -209,14 +108,12 @@
             width: 70%;
             height: 60%;
         }
-        .mascot-eyes {
+        .animal-eyes {
             display: flex;
             justify-content: space-around;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
         .eye {
-            width: 25px;
-            height: 25px;
             background: white;
             border-radius: 50%;
             position: relative;
@@ -225,67 +122,338 @@
         .eye::after {
             content: '';
             position: absolute;
-            width: 12px;
-            height: 12px;
             background: #333;
             border-radius: 50%;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            animation: eyeMove 3s ease-in-out infinite;
         }
-        @keyframes eyeMove {
-            0%, 100% { transform: translate(-50%, -50%); }
-            25% { transform: translate(-30%, -50%); }
-            75% { transform: translate(-70%, -50%); }
-        }
-        .mascot-nose {
-            width: 20px;
-            height: 15px;
-            background: #FF8C69;
+        .eye-sparkle {
+            position: absolute;
+            width: 30%;
+            height: 30%;
+            background: white;
             border-radius: 50%;
-            margin: 0 auto 15px;
+            top: 15%;
+            left: 15%;
+            opacity: 0.9;
+        }
+        .animal-nose {
+            border-radius: 50%;
+            margin: 0 auto 12px;
             box-shadow: 0 3px 8px rgba(0,0,0,0.2);
         }
-        .mascot-mouth {
-            width: 40px;
-            height: 20px;
+        .animal-mouth {
             border: 4px solid #FF6B9D;
             border-top: none;
             border-radius: 0 0 40px 40px;
             margin: 0 auto;
             background: rgba(255, 182, 193, 0.3);
         }
-        .mascot-ears {
+        .animal-ears {
             position: absolute;
-            top: 10%;
             width: 100%;
         }
         .ear {
-            width: 45px;
-            height: 45px;
-            background: linear-gradient(135deg, #FFA07A, #FF8C69);
             border-radius: 50%;
             position: absolute;
-            box-shadow: 0 5px 15px rgba(255, 107, 157, 0.3);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
-        .ear-left {
+
+        /* Bear */
+        .bear {
+            width: 150px;
+            height: 150px;
+            animation-delay: 0s;
+        }
+        .bear .animal-body {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #FFA07A 0%, #FF8C69 50%, #FF6B9D 100%);
+        }
+        .bear .ear {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #FFA07A, #FF8C69);
+            top: 10%;
+        }
+        .bear .ear-left {
             left: 5%;
             transform: rotate(-15deg);
         }
-        .ear-right {
+        .bear .ear-right {
             right: 5%;
             transform: rotate(15deg);
         }
-        @keyframes mascotBounce {
+        .bear .eye {
+            width: 30px;
+            height: 30px;
+        }
+        .bear .eye::after {
+            width: 16px;
+            height: 16px;
+        }
+        .bear .animal-nose {
+            width: 25px;
+            height: 18px;
+            background: #FF8C69;
+        }
+        .bear .animal-mouth {
+            width: 50px;
+            height: 25px;
+        }
+        .bear .animal-legs {
+            position: absolute;
+            bottom: -15px;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+        }
+        .bear .leg {
+            width: 25px;
+            height: 25px;
+            background: linear-gradient(135deg, #FFA07A, #FF8C69);
+            border-radius: 50%;
+        }
+
+        /* Bunny */
+        .bunny {
+            width: 130px;
+            height: 130px;
+            animation-delay: 0.3s;
+        }
+        .bunny .animal-body {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #FFB6C1 0%, #FFC0CB 50%, #FF69B4 100%);
+        }
+        .bunny .ear {
+            width: 30px;
+            height: 60px;
+            background: linear-gradient(135deg, #FFB6C1, #FFC0CB);
+            top: -35px;
+        }
+        .bunny .ear-left {
+            left: 20%;
+            transform: rotate(-10deg);
+        }
+        .bunny .ear-right {
+            right: 20%;
+            transform: rotate(10deg);
+        }
+        .bunny .eye {
+            width: 28px;
+            height: 28px;
+        }
+        .bunny .eye::after {
+            width: 15px;
+            height: 15px;
+        }
+        .bunny .animal-nose {
+            width: 20px;
+            height: 15px;
+            background: #FF69B4;
+        }
+        .bunny .animal-mouth {
+            width: 45px;
+            height: 22px;
+            border-color: #FF69B4;
+        }
+        .bunny .animal-legs {
+            position: absolute;
+            bottom: -15px;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+        }
+        .bunny .leg {
+            width: 22px;
+            height: 22px;
+            background: linear-gradient(135deg, #FFB6C1, #FFC0CB);
+            border-radius: 50%;
+        }
+
+        /* Kitty */
+        .kitty {
+            width: 140px;
+            height: 140px;
+            animation-delay: 0.6s;
+        }
+        .kitty .animal-body {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #DDA0DD 0%, #DA70D6 50%, #BA55D3 100%);
+        }
+        .kitty .ear {
+            width: 35px;
+            height: 35px;
+            background: linear-gradient(135deg, #DDA0DD, #DA70D6);
+            top: 5%;
+            border-radius: 50% 50% 0 0;
+        }
+        .kitty .ear-left {
+            left: 10%;
+            transform: rotate(-20deg);
+        }
+        .kitty .ear-right {
+            right: 10%;
+            transform: rotate(20deg);
+        }
+        .kitty .eye {
+            width: 32px;
+            height: 32px;
+        }
+        .kitty .eye::after {
+            width: 18px;
+            height: 18px;
+        }
+        .kitty .animal-nose {
+            width: 18px;
+            height: 14px;
+            background: #FF69B4;
+        }
+        .kitty .animal-mouth {
+            width: 35px;
+            height: 18px;
+            border-color: #FF69B4;
+        }
+        .kitty .whiskers {
+            position: absolute;
+            top: 65%;
+            width: 100%;
+        }
+        .kitty .whisker {
+            position: absolute;
+            width: 30px;
+            height: 2px;
+            background: #999;
+        }
+        .kitty .whisker-left-1 {
+            left: -5px;
+            top: 0;
+            transform: rotate(-10deg);
+        }
+        .kitty .whisker-left-2 {
+            left: -8px;
+            top: 10px;
+            transform: rotate(5deg);
+        }
+        .kitty .whisker-right-1 {
+            right: -5px;
+            top: 0;
+            transform: rotate(10deg);
+        }
+        .kitty .whisker-right-2 {
+            right: -8px;
+            top: 10px;
+            transform: rotate(-5deg);
+        }
+        .kitty .animal-legs {
+            position: absolute;
+            bottom: -15px;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+        }
+        .kitty .leg {
+            width: 24px;
+            height: 24px;
+            background: linear-gradient(135deg, #DDA0DD, #DA70D6);
+            border-radius: 50%;
+        }
+
+        /* Puppy */
+        .puppy {
+            width: 145px;
+            height: 145px;
+            animation-delay: 0.9s;
+        }
+        .puppy .animal-body {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #F4A460 0%, #DEB887 50%, #D2691E 100%);
+        }
+        .puppy .ear {
+            width: 45px;
+            height: 55px;
+            background: linear-gradient(135deg, #F4A460, #DEB887);
+            top: 5%;
+        }
+        .puppy .ear-left {
+            left: 0%;
+            transform: rotate(-30deg);
+        }
+        .puppy .ear-right {
+            right: 0%;
+            transform: rotate(30deg);
+        }
+        .puppy .eye {
+            width: 35px;
+            height: 35px;
+        }
+        .puppy .eye::after {
+            width: 20px;
+            height: 20px;
+        }
+        .puppy .animal-nose {
+            width: 28px;
+            height: 20px;
+            background: #8B4513;
+        }
+        .puppy .animal-mouth {
+            width: 55px;
+            height: 28px;
+            border-color: #8B4513;
+        }
+        .puppy .animal-legs {
+            position: absolute;
+            bottom: -15px;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+        }
+        .puppy .leg {
+            width: 26px;
+            height: 26px;
+            background: linear-gradient(135deg, #F4A460, #DEB887);
+            border-radius: 50%;
+        }
+
+        /* Dance Animation */
+        @keyframes dance {
             0%, 100% {
-                transform: translateY(0) rotate(-3deg);
+                transform: translateY(0) rotate(-5deg);
+            }
+            25% {
+                transform: translateY(-30px) rotate(5deg);
             }
             50% {
+                transform: translateY(0) rotate(-5deg);
+            }
+            75% {
                 transform: translateY(-20px) rotate(3deg);
             }
         }
 
+        /* Eye Blink Animation */
+        .eye {
+            animation: blink 4s ease-in-out infinite;
+        }
+        .bear .eye { animation-delay: 0s; }
+        .bunny .eye { animation-delay: 1s; }
+        .kitty .eye { animation-delay: 2s; }
+        .puppy .eye { animation-delay: 3s; }
+
+        @keyframes blink {
+            0%, 90%, 100% {
+                transform: scaleY(1);
+            }
+            95% {
+                transform: scaleY(0.1);
+            }
+        }
+
+        /* Content Styles */
         .content {
             text-align: center;
         }
@@ -295,7 +463,6 @@
             text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
             margin-bottom: 40px;
             font-weight: 700;
-            letter-spacing: 0.5px;
         }
 
         .features {
@@ -305,28 +472,12 @@
             margin: 50px 0;
         }
         .feature {
-            padding: 40px 25px;
+            padding: 35px 25px;
             background: white;
             border-radius: 25px;
             box-shadow: 0 8px 30px rgba(0,0,0,0.12);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition: all 0.4s;
             border: 5px solid;
-            position: relative;
-            overflow: hidden;
-        }
-        .feature::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, transparent 70%);
-            transform: scale(0);
-            transition: transform 0.6s;
-        }
-        .feature:hover::before {
-            transform: scale(1);
         }
         .feature:hover {
             transform: translateY(-15px) scale(1.05);
@@ -336,62 +487,15 @@
         .feature:nth-child(2) { border-color: #FF6B9D; }
         .feature:nth-child(3) { border-color: #98FB98; }
         .feature:nth-child(4) { border-color: #87CEEB; }
-        .feature-icon-3d {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 20px;
-            position: relative;
-            transform-style: preserve-3d;
-            animation: iconFloat 3s ease-in-out infinite;
-        }
-        .feature:nth-child(1) .feature-icon-3d { animation-delay: 0s; }
-        .feature:nth-child(2) .feature-icon-3d { animation-delay: 0.5s; }
-        .feature:nth-child(3) .feature-icon-3d { animation-delay: 1s; }
-        .feature:nth-child(4) .feature-icon-3d { animation-delay: 1.5s; }
-        @keyframes iconFloat {
-            0%, 100% {
-                transform: translateY(0) rotateY(0deg);
-            }
-            50% {
-                transform: translateY(-10px) rotateY(15deg);
-            }
-        }
-        .icon-shape {
-            width: 100%;
-            height: 100%;
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.5em;
-            position: relative;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-        }
-        .feature:nth-child(1) .icon-shape {
-            background: linear-gradient(135deg, #FFA07A, #FF8C69);
-        }
-        .feature:nth-child(2) .icon-shape {
-            background: linear-gradient(135deg, #FF6B9D, #FF8C69);
-        }
-        .feature:nth-child(3) .icon-shape {
-            background: linear-gradient(135deg, #98FB98, #90EE90);
-        }
-        .feature:nth-child(4) .icon-shape {
-            background: linear-gradient(135deg, #87CEEB, #87CEFA);
-        }
         .feature h3 {
             font-size: 1.5em;
             margin-bottom: 12px;
             color: #FF6B9D;
-            position: relative;
-            z-index: 2;
         }
         .feature p {
             font-size: 1.05em;
             color: #666;
             line-height: 1.6;
-            position: relative;
-            z-index: 2;
         }
 
         .channels {
@@ -402,31 +506,13 @@
             flex-wrap: wrap;
         }
         .channel {
-            padding: 40px 30px;
+            padding: 35px 30px;
             background: white;
             border-radius: 25px;
             box-shadow: 0 8px 30px rgba(0,0,0,0.12);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition: all 0.4s;
             border: 5px solid;
-            min-width: 220px;
-            position: relative;
-            overflow: hidden;
-        }
-        .channel::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-            transition: all 0.5s;
-        }
-        .channel:hover::after {
-            width: 300px;
-            height: 300px;
+            min-width: 200px;
         }
         .channel:hover {
             transform: translateY(-10px) scale(1.05);
@@ -435,52 +521,17 @@
         .channel:nth-child(1) { border-color: #FF0000; }
         .channel:nth-child(2) { border-color: #000000; }
         .channel:nth-child(3) { border-color: #C13584; }
-        .channel-icon-3d {
-            width: 70px;
-            height: 70px;
-            margin: 0 auto 20px;
-            position: relative;
-        }
-        .channel-icon-shape {
-            width: 100%;
-            height: 100%;
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2em;
-            color: white;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-            animation: channelPulse 2s ease-in-out infinite;
-        }
-        .channel:nth-child(1) .channel-icon-shape {
-            background: linear-gradient(135deg, #FF0000, #CC0000);
-        }
-        .channel:nth-child(2) .channel-icon-shape {
-            background: linear-gradient(135deg, #000000, #333333);
-        }
-        .channel:nth-child(3) .channel-icon-shape {
-            background: linear-gradient(135deg, #C13584, #E1306C);
-        }
-        @keyframes channelPulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.08); }
-        }
         .channel strong {
             display: block;
             font-size: 1.4em;
             margin-bottom: 12px;
             color: #FF6B9D;
-            position: relative;
-            z-index: 2;
         }
         .channel a {
             color: #87CEEB;
             text-decoration: none;
             font-weight: 700;
             font-size: 1.15em;
-            position: relative;
-            z-index: 2;
             transition: color 0.3s;
         }
         .channel a:hover {
@@ -500,29 +551,11 @@
             color: white;
             text-decoration: none;
             border-radius: 60px;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition: all 0.4s;
             font-weight: 800;
             font-size: 1.3em;
             box-shadow: 0 8px 25px rgba(255, 107, 157, 0.4);
             border: 4px solid white;
-            position: relative;
-            overflow: hidden;
-        }
-        .nav a::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            background: rgba(255,255,255,0.3);
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-            transition: all 0.5s;
-        }
-        .nav a:hover::before {
-            width: 300px;
-            height: 300px;
         }
         .nav a:hover {
             background: linear-gradient(135deg, #98FB98, #87CEEB);
@@ -547,10 +580,6 @@
             color: #FF6B9D;
             text-decoration: none;
             font-weight: 700;
-            transition: color 0.3s;
-        }
-        .footer a:hover {
-            color: #87CEEB;
         }
         .footer .heart {
             font-size: 1.3em;
@@ -560,65 +589,153 @@
         /* Responsive Design */
         @media (max-width: 768px) {
             .hero h1 {
-                font-size: 2.8em;
+                font-size: 2.5em;
             }
             .hero .tagline {
-                font-size: 1.4em;
+                font-size: 1.3em;
             }
-            .mascot-3d {
-                width: 140px;
-                height: 140px;
+            .dancing-animals {
+                gap: 20px;
             }
-            .features {
-                grid-template-columns: 1fr;
+            .bear, .bunny, .kitty, .puppy {
+                width: 100px;
+                height: 100px;
             }
-            .channels {
-                flex-direction: column;
-                align-items: center;
+            .bear .eye, .kitty .eye, .puppy .eye {
+                width: 22px;
+                height: 22px;
             }
-            .nav {
-                flex-direction: column;
-                align-items: center;
+            .bear .eye::after, .kitty .eye::after, .puppy .eye::after {
+                width: 12px;
+                height: 12px;
             }
-            .nav a {
-                width: 100%;
-                max-width: 350px;
+            .bunny .eye {
+                width: 20px;
+                height: 20px;
+            }
+            .bunny .eye::after {
+                width: 10px;
+                height: 10px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Floating 3D Shapes Background -->
-    <div class="floating-shapes">
-        <div class="shape shape-1"></div>
-        <div class="shape shape-2"></div>
-        <div class="shape shape-3"></div>
-        <div class="shape shape-4"></div>
-        <div class="shape shape-5"></div>
-    </div>
-
     <div class="container">
         <div class="hero">
-            <div class="hero-content">
-                <div class="brand-badge">OFFICIAL BRAND</div>
-                <h1>BiblioBaby Official</h1>
-                <p class="tagline">Where Little Minds Bloom</p>
+            <div class="brand-badge">OFFICIAL BRAND</div>
+            <h1>BiblioBaby Official</h1>
+            <p class="tagline">Where Little Minds Bloom</p>
 
-                <!-- 3D Animated Bear Mascot -->
-                <div class="mascot-3d">
-                    <div class="mascot-ears">
+            <!-- Dancing Cute Animals -->
+            <div class="dancing-animals">
+                <!-- Bear -->
+                <div class="animal bear">
+                    <div class="animal-ears">
                         <div class="ear ear-left"></div>
                         <div class="ear ear-right"></div>
                     </div>
-                    <div class="mascot-body">
-                        <div class="mascot-face">
-                            <div class="mascot-eyes">
-                                <div class="eye"></div>
-                                <div class="eye"></div>
+                    <div class="animal-body">
+                        <div class="animal-face">
+                            <div class="animal-eyes">
+                                <div class="eye">
+                                    <div class="eye-sparkle"></div>
+                                </div>
+                                <div class="eye">
+                                    <div class="eye-sparkle"></div>
+                                </div>
                             </div>
-                            <div class="mascot-nose"></div>
-                            <div class="mascot-mouth"></div>
+                            <div class="animal-nose"></div>
+                            <div class="animal-mouth"></div>
                         </div>
+                    </div>
+                    <div class="animal-legs">
+                        <div class="leg"></div>
+                        <div class="leg"></div>
+                    </div>
+                </div>
+
+                <!-- Bunny -->
+                <div class="animal bunny">
+                    <div class="animal-ears">
+                        <div class="ear ear-left"></div>
+                        <div class="ear ear-right"></div>
+                    </div>
+                    <div class="animal-body">
+                        <div class="animal-face">
+                            <div class="animal-eyes">
+                                <div class="eye">
+                                    <div class="eye-sparkle"></div>
+                                </div>
+                                <div class="eye">
+                                    <div class="eye-sparkle"></div>
+                                </div>
+                            </div>
+                            <div class="animal-nose"></div>
+                            <div class="animal-mouth"></div>
+                        </div>
+                    </div>
+                    <div class="animal-legs">
+                        <div class="leg"></div>
+                        <div class="leg"></div>
+                    </div>
+                </div>
+
+                <!-- Kitty -->
+                <div class="animal kitty">
+                    <div class="animal-ears">
+                        <div class="ear ear-left"></div>
+                        <div class="ear ear-right"></div>
+                    </div>
+                    <div class="animal-body">
+                        <div class="animal-face">
+                            <div class="animal-eyes">
+                                <div class="eye">
+                                    <div class="eye-sparkle"></div>
+                                </div>
+                                <div class="eye">
+                                    <div class="eye-sparkle"></div>
+                                </div>
+                            </div>
+                            <div class="animal-nose"></div>
+                            <div class="animal-mouth"></div>
+                            <div class="whiskers">
+                                <div class="whisker whisker-left-1"></div>
+                                <div class="whisker whisker-left-2"></div>
+                                <div class="whisker whisker-right-1"></div>
+                                <div class="whisker whisker-right-2"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="animal-legs">
+                        <div class="leg"></div>
+                        <div class="leg"></div>
+                    </div>
+                </div>
+
+                <!-- Puppy -->
+                <div class="animal puppy">
+                    <div class="animal-ears">
+                        <div class="ear ear-left"></div>
+                        <div class="ear ear-right"></div>
+                    </div>
+                    <div class="animal-body">
+                        <div class="animal-face">
+                            <div class="animal-eyes">
+                                <div class="eye">
+                                    <div class="eye-sparkle"></div>
+                                </div>
+                                <div class="eye">
+                                    <div class="eye-sparkle"></div>
+                                </div>
+                            </div>
+                            <div class="animal-nose"></div>
+                            <div class="animal-mouth"></div>
+                        </div>
+                    </div>
+                    <div class="animal-legs">
+                        <div class="leg"></div>
+                        <div class="leg"></div>
                     </div>
                 </div>
             </div>
@@ -629,30 +746,18 @@
 
             <div class="features">
                 <div class="feature">
-                    <div class="feature-icon-3d">
-                        <div class="icon-shape">🎬</div>
-                    </div>
                     <h3>Calm Animations</h3>
                     <p>Soft, soothing visuals designed for developing eyes and growing minds</p>
                 </div>
                 <div class="feature">
-                    <div class="feature-icon-3d">
-                        <div class="icon-shape">🎵</div>
-                    </div>
                     <h3>Gentle Music</h3>
                     <p>Age-appropriate melodies at 60-80 BPM perfect for relaxation and bonding</p>
                 </div>
                 <div class="feature">
-                    <div class="feature-icon-3d">
-                        <div class="icon-shape">📚</div>
-                    </div>
                     <h3>Educational</h3>
                     <p>Supporting early discovery and sensory development through engaging content</p>
                 </div>
                 <div class="feature">
-                    <div class="feature-icon-3d">
-                        <div class="icon-shape">🛡️</div>
-                    </div>
                     <h3>Safe Content</h3>
                     <p>All content reviewed for appropriateness, quality, and child safety</p>
                 </div>
@@ -660,23 +765,14 @@
 
             <div class="channels">
                 <div class="channel">
-                    <div class="channel-icon-3d">
-                        <div class="channel-icon-shape">▶</div>
-                    </div>
                     <strong>YouTube</strong>
                     <a href="https://www.youtube.com/@BiblioBaby" target="_blank">@BiblioBaby</a>
                 </div>
                 <div class="channel">
-                    <div class="channel-icon-3d">
-                        <div class="channel-icon-shape">♪</div>
-                    </div>
                     <strong>TikTok</strong>
                     <a href="https://www.tiktok.com/@bibliobaby.official" target="_blank">@bibliobaby.official</a>
                 </div>
                 <div class="channel">
-                    <div class="channel-icon-3d">
-                        <div class="channel-icon-shape">◎</div>
-                    </div>
                     <strong>Instagram</strong>
                     <a href="https://www.instagram.com/bibliobaby" target="_blank">@bibliobaby</a>
                 </div>
